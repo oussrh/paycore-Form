@@ -1,0 +1,19 @@
+* {margin:0;padding:0;}
+.container{background-color: #f1f1f1;
+            margin-top: 20px;
+            margin-bottom: 20px;}
+h1{text-align: center; margin-bottom: 20px;}
+
+.help-block{color:red;}
+
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}

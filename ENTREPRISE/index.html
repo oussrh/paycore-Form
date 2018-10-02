@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>FORMULAIRE ENTREPRISE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" type="text/css" media="screen" href="src/main.css" />
+
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <!--Jquery-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+        <div class="container">
+                <div class="col-md-12">
+
+                        <form method="POST" action="query.php" id="formEntreprise">
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group has-danger">
+                                                        <label class="control-label" for="entreprise">Dénomination entreprise *</label>
+                                                        <input id="entreprise" type="text" class="form-control form-control-danger" name="entreprise" required>
+                                                        <div class="help-block with-errors"></div>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                <div class="form-group">
+                                                        <label class="control-label" for="FormeJ">Forme juridique *</label>
+                                                        <select id="FormeJ" class="form-control" name="FormeJ" required>
+                                                                <option value="SA">SA</option>
+                                                                <option value="SPRL">SPRL</option>
+                                                                <option value="SPRLu">SPRLu</option>
+                                                                <option value="SCIV SPRL">SCIV SPRL</option>
+                                                                <option value="SCRL">SCRL</option>
+                                                                <option value="SCS">SCS</option>
+                                                                <option value="SNC">SNC</option>
+                                                                <option value="SCS">SCS</option>
+                                                                <option value="SCA">SCA</option>
+                                                                <option value="Autre">Autre</option>
+                                                        </select>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" id="formejuridique" style="display: none;">
+                                                <div class="form-group has-danger">
+                                                        <label class="control-label" for="autreformJ">&nbsp;</label>
+                                                        <input id="autreformJ" type="text" class="form-control form-control-danger" name="autreformJ" required>
+                                                        <div class="help-block with-errors"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <hr/>
+                                <h2>ADRESSE SIÈGE SOCIAL</h2>
+                                <div class="row">
+
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="form-group">
+                                                        <label class="control-label" for="Adresse">Adresse (Rue - Av - Bld - ...)</label>
+                                                        <input id="Adresse" type="text" class="contactInput form-control" name="Adresse">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="form-group">
+                                                        <label class="control-label" for="AdresseN">Numéro</label>
+                                                        <input id="AdresseN" type="text" class="contactInput form-control" name="AdresseN">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="form-group">
+                                                        <label class="control-label" for="AdresseBte">Bte</label>
+                                                        <input id="AdresseBte" type="text" class="contactInput form-control" name="AdresseBte">
+                                                </div>
+                                        </div>
+
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="AdresseCP">Code Postal</label>
+                                                        <input id="AdresseCP" type="text" class="contactInput form-control" name="AdresseCP" maxlength="5">
+                                                </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="localite">Localité</label>
+                                                        <input id="localite" type="text" class="contactInput form-control" name="localite">
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label>Adresse siège d'exploitation identique que siège social ?</label>
+                                                        <div>
+                                                                <input type="radio" id="adresseSiegeoui" name="adresseSiege" value="oui" checked/>
+                                                                <label for="adresseSiegeoui">Oui</label>
+                                                        </div>
+                                                        <div>
+                                                                <input type="radio" id="adresseSiegenon" name="adresseSiege" value="non" />
+                                                                <label for="adresseSiegenon">Non</label>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="exploitation" style="display: none;">
+                                        <hr/>
+                                        <h2>ADRESSE SIÈGE D'EXPLOITATION</h2>
+                                        <div class="row">
+
+                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                        <div class="form-group">
+                                                                <label class="control-label" for="Adresse">Adresse (Rue - Av - Bld - ...)</label>
+                                                                <input id="Adresse" type="text" class="contactInput form-control" name="AdresseExp">
+                                                        </div>
+                                                </div>
+                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                        <div class="form-group">
+                                                                <label class="control-label" for="AdresseN">Numéro</label>
+                                                                <input id="AdresseN" type="text" class="contactInput form-control" name="AdresseNExp">
+                                                        </div>
+                                                </div>
+                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                        <div class="form-group">
+                                                                <label class="control-label" for="AdresseBte">Bte</label>
+                                                                <input id="AdresseBte" type="text" class="contactInput form-control" name="AdresseBteExp">
+                                                        </div>
+                                                </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                        <div class="form-group">
+                                                                <label for="AdresseCP">Code Postal</label>
+                                                                <input id="AdresseCP" type="text" class="contactInput form-control" name="AdresseCPExp" maxlength="5">
+                                                        </div>
+                                                </div>
+
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                        <div class="form-group">
+                                                                <label for="localite">Localité</label>
+                                                                <input id="localite" type="text" class="contactInput form-control" name="localiteExp">
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="form-group">
+                                                        <label for="telfix">Tél *</label>
+                                                        <input id="telfix" type="tel" class="contactInput form-control" name="telfix" required>
+                                                        <div class="help-block with-errors"></div>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="form-group">
+                                                        <label for="telgsm">Gsm *</label>
+                                                        <input id="telgsm" type="tel" class="contactInput form-control" name="telgsm" required>
+                                                        <div class="help-block with-errors"></div>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="form-group">
+                                                        <label for="email">Email *</label>
+                                                        <input id="email" type="email" class="contactInput form-control" name="email" required>
+                                                        <div class="help-block with-errors"></div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="phone_number">Rôle linguistique</label>
+                                                        <select id="roleLinguistique" class="form-control" name="roleLinguistique">
+                                                                <option value="Francais">Francais</option>
+                                                                <option value="Néerlandais">Néerlandais</option>
+                                                                <option value="Allemand">Allemand</option>
+                                                        </select>
+                                                </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="langueP">Langue Principale</label>
+                                                        <select id="langueP" class="form-control" name="langueP">
+                                                                <option value="Francais">Francais</option>
+                                                                <option value="Néerlandais">Néerlandais</option>
+                                                                <option value="Allemand">Allemand</option>
+                                                        </select>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="BCE">N° BCE *</label>
+                                                        <input id="BCE" type="text" class="contactInput form-control" name="BCE" required>
+                                                </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label>Assujetti à la TVA ? *</label>
+                                                        <div>
+                                                                <input type="radio" id="tvaOui" name="Assujettitva" value="oui" />
+                                                                <label for="tvaOui">Oui</label>
+                                                        </div>
+                                                        <div>
+                                                                <input type="radio" id="tvaNon" name="Assujettitva" value="non" checked/>
+                                                                <label for="tvaNon">Non</label>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="UESC">N° UE du siège social</label>
+                                                        <input id="UESC" type="text" class="contactInput form-control" name="UESC">
+                                                </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="CodeNACE">Code NACE</label>
+                                                        <input id="CodeNACE" type="text" class="contactInput form-control" name="CodeNACE">
+                                                </div>
+                                        </div>
+                                </div>
+                                <hr/>
+                                <h2>DONNÉES ONSS</h2>
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="IndiceONSS">Indice ONSS</label>
+                                                        <input id="IndiceONSS" type="text" class="contactInput form-control" name="IndiceONSS">
+                                                </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="numONSS">N° ONSS</label>
+                                                        <input id="numONSS" type="text" class="contactInput form-control" name="numONSS">
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="nbrTravailleuraff">Nbre travailleur à l'affiliation</label>
+                                                        <input id="nbrTravailleuraff" type="number" class="contactInput form-control" name="nbrTravailleuraff">
+                                                </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="nbrTravailleur">Nbre travaileur au 30 juin Année précédente</label>
+                                                        <input id="nbrTravailleur" type="number" class="contactInput form-control" name="nbrTravailleur">
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                        <label for="CommissionParitaire">Commission Paritaire</label>
+                                                        <input id="CommissionParitaire" type="text" class="contactInput form-control" name="CommissionParitaire">
+                                                </div>
+                                        </div>
+
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="CieAssurance">Cie Assurance-Loi *</label>
+                                                        <input id="CieAssurance" type="text" class="contactInput form-control" name="CieAssurance" required>
+                                                </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="numAffiliation">N° affiliation</label>
+                                                        <input id="numAffiliation" type="text" class="contactInput form-control" name="numAffiliation">
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="MedecineTravail">Médecine Travail (SEPPT)</label>
+                                                        <input id="MedecineTravail" type="text" class="contactInput form-control" name="MedecineTravail">
+                                                </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="numAffiliationM">N° affiliation</label>
+                                                        <input id="numAffiliationM" type="text" class="contactInput form-control" name="numAffiliationM">
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="CaisseAllocFamili">Caisse Allocations Familiales</label>
+                                                        <input id="CaisseAllocFamili" type="text" class="contactInput form-control" name="CaisseAllocFamili">
+                                                </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="numAffiliationCAF">N° affiliation</label>
+                                                        <input id="numAffiliationCAF" type="text" class="contactInput form-control" name="numAffiliationCAF">
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="CaisseConge">Caisse de congé (ouvriers)</label>
+                                                        <input id="CaisseConge" type="text" class="contactInput form-control" name="CaisseConge">
+                                                </div>
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                        <label for="CompteIBAN">Compte IBAN entreprise</label>
+                                                        <input id="CompteIBAN" type="text" class="contactInput form-control" name="CompteIBAN">
+                                                </div>
+                                        </div>
+                                </div>
+                                <hr/>
+                                <h2>DONNÉES ONSS</h2>
+                                <p>Mentionnez l'horaire type de travail d'un travailleur à temps plein. Si l'horaire fait partie
+                                        d'un cycle, complétez la 2è, 3è, 4è ligne si le cycle est réparti sur plusieurs semaines.
+                                        (Ligne 1 = semaine 1; Ligne 2 = semaine 2 ; ...)</p>
+
+
+                                <div class="row">
+                                        <div class="offset-xl-2 offset-lg-2 offset-md-2 offset-sm-2 offset-xs-2 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <label for="phone_number">Lundi</label>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <label for="phone_number">Mardi</label>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <label for="phone_number">Mercredi</label>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <label for="phone_number">Jeudi</label>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <label for="phone_number">Vendredi</label>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <label for="phone_number">Samedi</label>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <label for="phone_number">Dimanche</label>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <label for="phone_number">Total</label>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="offset-xl-2 offset-lg-2 offset-md-2 offset-sm-2 offset-xs-2 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="lundiSemaine1" type="number" min="0" max="12" class="contactInput form-control Semaine1" name="lundiSemaine1">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="mardiSemaine1" type="number" min="0" max="12" class="contactInput form-control Semaine1" name="mardiSemaine1">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="mercrediSemaine1" type="number" min="0" max="12" class="contactInput form-control Semaine1" name="mercrediSemaine1">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="jeudiSemaine1" type="number" min="0" max="12" class="contactInput form-control Semaine1" name="jeudiSemaine1">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="vendrediSemaine1" type="number" min="0" max="12" class="contactInput form-control Semaine1" name="vendrediSemaine1">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="samediSemaine1" type="number" min="0" max="12" class="contactInput form-control Semaine1" name="samediSemaine1">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="dimancheSemaine1" type="number" min="0" max="12" class="contactInput form-control Semaine1" name="dimancheSemaine1">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="totalSemaine1" type="number" min="0" max="40" value="0" class="contactInput form-control" name="totalSemaine1"
+                                                                readonly>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="offset-xl-2 offset-lg-2 offset-md-2 offset-sm-2 offset-xs-2 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="lundiSemaine2" type="number" min="0" max="12" class="contactInput form-control Semaine2" name="lundiSemaine2">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="mardiSemaine2" type="number" min="0" max="12" class="contactInput form-control Semaine2" name="mardiSemaine2">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="mercrediSemaine2" type="number" min="0" max="12" class="contactInput form-control Semaine2" name="mercrediSemaine2">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="jeudiSemaine2" type="number" min="0" max="12" class="contactInput form-control Semaine2" name="jeudiSemaine2">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="vendrediSemaine2" type="number" min="0" max="12" class="contactInput form-control Semaine2" name="vendrediSemaine2">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="samediSemaine2" type="number" min="0" max="12" class="contactInput form-control Semaine2" name="samediSemaine2">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="dimancheSemaine2" type="number" min="0" max="12" class="contactInput form-control Semaine2" name="dimancheSemaine2">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="totalSemaine2" type="number" min="0" max="40" value="0" class="contactInput form-control" name="totalSemaine2"
+                                                                readonly>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="offset-xl-2 offset-lg-2 offset-md-2 offset-sm-2 offset-xs-2 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="lundiSemaine3" type="number" min="0" max="12" class="contactInput form-control Semaine3" name="lundiSemaine3">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="mardiSemaine3" type="number" min="0" max="12" class="contactInput form-control Semaine3" name="mardiSemaine3">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="mercrediSemaine3" type="number" min="0" max="12" class="contactInput form-control Semaine3" name="mercrediSemaine3">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="jeudiSemaine3" type="number" min="0" max="12" class="contactInput form-control Semaine3" name="jeudiSemaine3">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="vendrediSemaine3" type="number" min="0" max="12" class="contactInput form-control Semaine3" name="vendrediSemaine3">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="samediSemaine3" type="number" min="0" max="12" class="contactInput form-control Semaine3" name="samediSemaine3">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="dimancheSemaine3" type="number" min="0" max="12" class="contactInput form-control Semaine3" name="dimancheSemaine3">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="totalSemaine3" type="number" min="0" max="40" value="0" class="contactInput form-control" name="totalSemaine3"
+                                                                readonly>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="offset-xl-2 offset-lg-2 offset-md-2 offset-sm-2 offset-xs-2 col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="lundiSemaine4" type="number" min="0" max="12" class="contactInput form-control Semaine4" name="lundiSemaine4">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="mardiSemaine4" type="number" min="0" max="12" class="contactInput form-control Semaine4" name="mardiSemaine4">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="mercrediSemaine4" type="number" min="0" max="12" class="contactInput form-control Semaine4" name="mercrediSemaine4">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="jeudiSemaine4" type="number" min="0" max="12" class="contactInput form-control Semaine4" name="jeudiSemaine4">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="vendrediSemaine4" type="number" min="0" max="12" class="contactInput form-control Semaine4" name="vendrediSemaine4">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="samediSemaine4" type="number" min="0" max="12" class="contactInput form-control Semaine4" name="samediSemaine4">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="dimancheSemaine4" type="number" min="0" max="12" class="contactInput form-control Semaine4" name="dimancheSemaine4">
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                <div class="form-group">
+                                                        <input id="totalSemaine4" type="number" min="0" max="40" value="0" class="contactInput form-control" name="totalSemaine4"
+                                                                readonly>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                        <label for="remarque">Remarques particulières à communiquer </label>
+                                                        <textarea class="contactInput form-control" name="remarque" id="remarque"></textarea>
+                                                </div>
+                                        </div>
+
+                                </div>
+
+                                <div class="row">
+                                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                                <div class="form-group">
+                                                        <input type="submit" value="Soumettre">
+                                                </div>
+                                        </div>
+
+                                </div>
+
+                        </form>
+                </div>
+        </div>
+        <!--container-->
+
+        <script src="src/main.js"></script>
+</body>
+
+</html>

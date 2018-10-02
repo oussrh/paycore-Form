@@ -1,0 +1,1590 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>FORMULAIRE TRAVAILLEUR MODIFICATION</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="src/main.css" />
+
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
+
+	<!--Jquery-->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+
+	
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<form id="TravailleurModif" action="query.php" method="POST">
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="form-group">
+								<label for="employeur">Employeur *</label>
+								<input id="employeur" type="text" class="contactInput form-control" name="employeur" required>
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+							<div class="form-group has-danger">
+								<label class="control-label" for="nomTravailleur">Nom Travailleur *</label>
+								<input id="nomTravailleur" type="text" class="form-control form-control-danger" name="nomTravailleur" required>
+								<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+							<div class="form-group has-danger">
+								<label class="control-label" for="prenomTravailleur">Prénom Travailleur *</label>
+								<input id="prenomTravailleur" type="text" class="form-control form-control-danger" name="prenomTravailleur" required>
+								<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+							<div class="form-group">
+								<label for="phone_number">Quels sont les éléments à modifier ?</label>
+								<div>
+									<input type="checkbox" id="element1" name="modif[]" value="N° NISS" />
+									<label for="element1">N° NISS</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element2" name="modif[]" value="Adresse" />
+									<label for="element2">Adresse</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element3" name="modif[]" value="N° Tel" />
+									<label for="element3">N° Tel</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element4" name="modif[]" value="N° GSM" />
+									<label for="element4">N° GSM</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element5" name="modif[]" value="mail" />
+									<label for="element5">Adresse mail </label>
+								</div>
+								<div>
+									<input type="checkbox" id="element6" name="modif[]" value="Date fin contrat" />
+									<label for="element6">Date fin contrat</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element7" name="modif[]" value="Langue" />
+									<label for="element7">Langue à utiliser fiche de paie</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element8" name="modif[]" value="Etat civil" />
+									<label for="element8">Etat civil</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element9" name="modif[]" value="charges" />
+									<label for="element9">Personnes à charges</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element10" name="modif[]" value="Compte" />
+									<label for="element10">N° Compte bancaire</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element11" name="modif[]" value="Nouveau contrat" />
+									<label for="element11">Nouveau contrat / fonction</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element12" name="modif[]" value="Régime" />
+									<label for="element12">Régime de travail</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element13" name="modif[]" value="Salaire" />
+									<label for="element13">Salaire de base</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element14" name="modif[]" value="Volontariat" />
+									<label for="element14">Volontariat fiscal</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element15" name="modif[]" value="Autres" />
+									<label for="element15">Autres éléments de rémunération</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element16" name="modif[]" value="repas" />
+									<label for="element16">Chèques repas</label>
+								</div>
+								<div>
+									<input type="checkbox" id="element17" name="modif[]" value="Infos" />
+									<label for="element17">Infos diverses à communiquer</label>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+					<!--********************************************************************-->
+					<!-- element1 -->
+					<div class="row niss" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="niss">N° NISS *</label>
+										<input id="niss" type="text" class="contactInput form-control" name="niss" required>
+									</div>
+								</div>
+
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="nationalite">Nationalité (Pays) *</label>
+										<select id="nationalite" class="form-control" name="nationalite" required>
+											<option value="Afghanistan">Afghanistan</option>
+											<option value="Albanie">Albanie</option>
+											<option value="Antarctique">Antarctique</option>
+											<option value="Algérie">Algérie</option>
+											<option value="Samoa Américaines">Samoa Américaines</option>
+											<option value="Andorre">Andorre</option>
+											<option value="Angola">Angola</option>
+											<option value="Antigua-et-Barbuda">Antigua-et-Barbuda</option>
+											<option value="Azerbaïdjan">Azerbaïdjan</option>
+											<option value="Argentine">Argentine</option>
+											<option value="Australie">Australie</option>
+											<option value="Autriche">Autriche</option>
+											<option value="Bahamas">Bahamas</option>
+											<option value="Bahreïn">Bahreïn</option>
+											<option value="Bangladesh">Bangladesh</option>
+											<option value="Arménie">Arménie</option>
+											<option value="Barbade">Barbade</option>
+											<option value="Belgique" selected="selected">Belgique</option>
+											<option value="Bermudes">Bermudes</option>
+											<option value="Bhoutan">Bhoutan</option>
+											<option value="Bolivie">Bolivie</option>
+											<option value="Bosnie-Herzégovine">Bosnie-Herzégovine</option>
+											<option value="Botswana">Botswana</option>
+											<option value="Île Bouvet">Île Bouvet</option>
+											<option value="Brésil">Brésil</option>
+											<option value="Belize">Belize</option>
+											<option value="Territoire Britannique de l&#039;Océan Indien">Territoire Britannique de l&#039;Océan Indien</option>
+											<option value="Îles Salomon">Îles Salomon</option>
+											<option value="Îles Vierges Britanniques">Îles Vierges Britanniques</option>
+											<option value="Brunéi Darussalam">Brunéi Darussalam</option>
+											<option value="Bulgarie">Bulgarie</option>
+											<option value="Myanmar">Myanmar</option>
+											<option value="Burundi">Burundi</option>
+											<option value="Bélarus">Bélarus</option>
+											<option value="Cambodge">Cambodge</option>
+											<option value="Cameroun">Cameroun</option>
+											<option value="Canada">Canada</option>
+											<option value="Cap-vert">Cap-vert</option>
+											<option value="Îles Caïmanes">Îles Caïmanes</option>
+											<option value="République Centrafricaine">République Centrafricaine</option>
+											<option value="Sri Lanka">Sri Lanka</option>
+											<option value="Tchad">Tchad</option>
+											<option value="Chili">Chili</option>
+											<option value="Chine">Chine</option>
+											<option value="Taïwan">Taïwan</option>
+											<option value="Île Christmas">Île Christmas</option>
+											<option value="Îles Cocos (Keeling)">Îles Cocos (Keeling)</option>
+											<option value="Colombie">Colombie</option>
+											<option value="Comores">Comores</option>
+											<option value="Mayotte">Mayotte</option>
+											<option value="République du Congo">République du Congo</option>
+											<option value="République Démocratique du Congo">République Démocratique du Congo</option>
+											<option value="Îles Cook">Îles Cook</option>
+											<option value="Costa Rica">Costa Rica</option>
+											<option value="Croatie">Croatie</option>
+											<option value="Cuba">Cuba</option>
+											<option value="Chypre">Chypre</option>
+											<option value="République Tchèque">République Tchèque</option>
+											<option value="Bénin">Bénin</option>
+											<option value="Danemark">Danemark</option>
+											<option value="Dominique">Dominique</option>
+											<option value="République Dominicaine">République Dominicaine</option>
+											<option value="Équateur">Équateur</option>
+											<option value="El Salvador">El Salvador</option>
+											<option value="Guinée Équatoriale">Guinée Équatoriale</option>
+											<option value="Éthiopie">Éthiopie</option>
+											<option value="Érythrée">Érythrée</option>
+											<option value="Estonie">Estonie</option>
+											<option value="Îles Féroé">Îles Féroé</option>
+											<option value="Îles (malvinas) Falkland">Îles (malvinas) Falkland</option>
+											<option value="Géorgie du Sud et les Îles Sandwich du Sud">Géorgie du Sud et les Îles Sandwich du Sud</option>
+											<option value="Fidji">Fidji</option>
+											<option value="Finlande">Finlande</option>
+											<option value="Îles Åland">Îles Åland</option>
+											<option value="France">France</option>
+											<option value="Guyane Française">Guyane Française</option>
+											<option value="Polynésie Française">Polynésie Française</option>
+											<option value="Terres Australes Françaises">Terres Australes Françaises</option>
+											<option value="Djibouti">Djibouti</option>
+											<option value="Gabon">Gabon</option>
+											<option value="Géorgie">Géorgie</option>
+											<option value="Gambie">Gambie</option>
+											<option value="Territoire Palestinien Occupé">Territoire Palestinien Occupé</option>
+											<option value="Allemagne">Allemagne</option>
+											<option value="Ghana">Ghana</option>
+											<option value="Gibraltar">Gibraltar</option>
+											<option value="Kiribati">Kiribati</option>
+											<option value="Grèce">Grèce</option>
+											<option value="Groenland">Groenland</option>
+											<option value="Grenade">Grenade</option>
+											<option value="Guadeloupe">Guadeloupe</option>
+											<option value="Guam">Guam</option>
+											<option value="Guatemala">Guatemala</option>
+											<option value="Guinée">Guinée</option>
+											<option value="Guyana">Guyana</option>
+											<option value="Haïti">Haïti</option>
+											<option value="Îles Heard et Mcdonald">Îles Heard et Mcdonald</option>
+											<option value="Saint-Siège (état de la Cité du Vatican)">Saint-Siège (état de la Cité du Vatican)</option>
+											<option value="Honduras">Honduras</option>
+											<option value="Hong-Kong">Hong-Kong</option>
+											<option value="Hongrie">Hongrie</option>
+											<option value="Islande">Islande</option>
+											<option value="Inde">Inde</option>
+											<option value="Indonésie">Indonésie</option>
+											<option value="République Islamique d&#039;Iran">République Islamique d&#039;Iran</option>
+											<option value="Iraq">Iraq</option>
+											<option value="Irlande">Irlande</option>
+											<option value="Israël">Israël</option>
+											<option value="Italie">Italie</option>
+											<option value="Côte d&#039;Ivoire">Côte d&#039;Ivoire</option>
+											<option value="Jamaïque">Jamaïque</option>
+											<option value="Japon">Japon</option>
+											<option value="Kazakhstan">Kazakhstan</option>
+											<option value="Jordanie">Jordanie</option>
+											<option value="Kenya">Kenya</option>
+											<option value="République Populaire Démocratique de Corée">République Populaire Démocratique de Corée</option>
+											<option value="République de Corée">République de Corée</option>
+											<option value="Koweït">Koweït</option>
+											<option value="Kirghizistan">Kirghizistan</option>
+											<option value="République Démocratique Populaire Lao">République Démocratique Populaire Lao</option>
+											<option value="Liban">Liban</option>
+											<option value="Lesotho">Lesotho</option>
+											<option value="Lettonie">Lettonie</option>
+											<option value="Libéria">Libéria</option>
+											<option value="Jamahiriya Arabe Libyenne">Jamahiriya Arabe Libyenne</option>
+											<option value="Liechtenstein">Liechtenstein</option>
+											<option value="Lituanie">Lituanie</option>
+											<option value="Luxembourg">Luxembourg</option>
+											<option value="Macao">Macao</option>
+											<option value="Madagascar">Madagascar</option>
+											<option value="Malawi">Malawi</option>
+											<option value="Malaisie">Malaisie</option>
+											<option value="Maldives">Maldives</option>
+											<option value="Mali">Mali</option>
+											<option value="Malte">Malte</option>
+											<option value="Martinique">Martinique</option>
+											<option value="Mauritanie">Mauritanie</option>
+											<option value="Maurice">Maurice</option>
+											<option value="Mexique">Mexique</option>
+											<option value="Monaco">Monaco</option>
+											<option value="Mongolie">Mongolie</option>
+											<option value="République de Moldova">République de Moldova</option>
+											<option value="Montserrat">Montserrat</option>
+											<option value="Maroc">Maroc</option>
+											<option value="Mozambique">Mozambique</option>
+											<option value="Oman">Oman</option>
+											<option value="Namibie">Namibie</option>
+											<option value="Nauru">Nauru</option>
+											<option value="Népal">Népal</option>
+											<option value="Pays-Bas">Pays-Bas</option>
+											<option value="Antilles Néerlandaises">Antilles Néerlandaises</option>
+											<option value="Aruba">Aruba</option>
+											<option value="Nouvelle-Calédonie">Nouvelle-Calédonie</option>
+											<option value="Vanuatu">Vanuatu</option>
+											<option value="Nouvelle-Zélande">Nouvelle-Zélande</option>
+											<option value="Nicaragua">Nicaragua</option>
+											<option value="Niger">Niger</option>
+											<option value="Nigéria">Nigéria</option>
+											<option value="Niué">Niué</option>
+											<option value="Île Norfolk">Île Norfolk</option>
+											<option value="Norvège">Norvège</option>
+											<option value="Îles Mariannes du Nord">Îles Mariannes du Nord</option>
+											<option value="Îles Mineures Éloignées des États-Unis">Îles Mineures Éloignées des États-Unis</option>
+											<option value="États Fédérés de Micronésie">États Fédérés de Micronésie</option>
+											<option value="Îles Marshall">Îles Marshall</option>
+											<option value="Palaos">Palaos</option>
+											<option value="Pakistan">Pakistan</option>
+											<option value="Panama">Panama</option>
+											<option value="Papouasie-Nouvelle-Guinée">Papouasie-Nouvelle-Guinée</option>
+											<option value="Paraguay">Paraguay</option>
+											<option value="Pérou">Pérou</option>
+											<option value="Philippines">Philippines</option>
+											<option value="Pitcairn">Pitcairn</option>
+											<option value="Pologne">Pologne</option>
+											<option value="Portugal">Portugal</option>
+											<option value="Guinée-Bissau">Guinée-Bissau</option>
+											<option value="Timor-Leste">Timor-Leste</option>
+											<option value="Porto Rico">Porto Rico</option>
+											<option value="Qatar">Qatar</option>
+											<option value="Réunion">Réunion</option>
+											<option value="Roumanie">Roumanie</option>
+											<option value="Fédération de Russie">Fédération de Russie</option>
+											<option value="Rwanda">Rwanda</option>
+											<option value="Sainte-Hélène">Sainte-Hélène</option>
+											<option value="Saint-Kitts-et-Nevis">Saint-Kitts-et-Nevis</option>
+											<option value="Anguilla">Anguilla</option>
+											<option value="Sainte-Lucie">Sainte-Lucie</option>
+											<option value="Saint-Pierre-et-Miquelon">Saint-Pierre-et-Miquelon</option>
+											<option value="Saint-Vincent-et-les Grenadines">Saint-Vincent-et-les Grenadines</option>
+											<option value="Saint-Marin">Saint-Marin</option>
+											<option value="Sao Tomé-et-Principe">Sao Tomé-et-Principe</option>
+											<option value="Arabie Saoudite">Arabie Saoudite</option>
+											<option value="Sénégal">Sénégal</option>
+											<option value="Seychelles">Seychelles</option>
+											<option value="Sierra Leone">Sierra Leone</option>
+											<option value="Singapour">Singapour</option>
+											<option value="Slovaquie">Slovaquie</option>
+											<option value="Viet Nam">Viet Nam</option>
+											<option value="Slovénie">Slovénie</option>
+											<option value="Somalie">Somalie</option>
+											<option value="Afrique du Sud">Afrique du Sud</option>
+											<option value="Zimbabwe">Zimbabwe</option>
+											<option value="Espagne">Espagne</option>
+											<option value="Sahara Occidental">Sahara Occidental</option>
+											<option value="Soudan">Soudan</option>
+											<option value="Suriname">Suriname</option>
+											<option value="Svalbard etÎle Jan Mayen">Svalbard etÎle Jan Mayen</option>
+											<option value="Swaziland">Swaziland</option>
+											<option value="Suède">Suède</option>
+											<option value="Suisse">Suisse</option>
+											<option value="République Arabe Syrienne">République Arabe Syrienne</option>
+											<option value="Tadjikistan">Tadjikistan</option>
+											<option value="Thaïlande">Thaïlande</option>
+											<option value="Togo">Togo</option>
+											<option value="Tokelau">Tokelau</option>
+											<option value="Tonga">Tonga</option>
+											<option value="Trinité-et-Tobago">Trinité-et-Tobago</option>
+											<option value="Émirats Arabes Unis">Émirats Arabes Unis</option>
+											<option value="Tunisie">Tunisie</option>
+											<option value="Turquie">Turquie</option>
+											<option value="Turkménistan">Turkménistan</option>
+											<option value="Îles Turks et Caïques">Îles Turks et Caïques</option>
+											<option value="Tuvalu">Tuvalu</option>
+											<option value="Ouganda">Ouganda</option>
+											<option value="Ukraine">Ukraine</option>
+											<option value="L&#039;ex-République Yougoslave de Macédoine">L&#039;ex-République Yougoslave de Macédoine</option>
+											<option value="Égypte">Égypte</option>
+											<option value="Royaume-Uni">Royaume-Uni</option>
+											<option value="Île de Man">Île de Man</option>
+											<option value="République-Unie de Tanzanie">République-Unie de Tanzanie</option>
+											<option value="États-Unis">États-Unis</option>
+											<option value="Îles Vierges des États-Unis">Îles Vierges des États-Unis</option>
+											<option value="Burkina Faso">Burkina Faso</option>
+											<option value="Uruguay">Uruguay</option>
+											<option value="Ouzbékistan">Ouzbékistan</option>
+											<option value="Venezuela">Venezuela</option>
+											<option value="Wallis et Futuna">Wallis et Futuna</option>
+											<option value="Samoa">Samoa</option>
+											<option value="Yémen">Yémen</option>
+											<option value="Serbie-et-Monténégro">Serbie-et-Monténégro</option>
+											<option value="Zambie">Zambie</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element2 -->
+					<div class="row adresse" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label class="control-label" for="adresse">Adresse (Rue - Av - Bld - ...)</label>
+										<input id="adresse" type="text" class="contactInput form-control" name="adresse">
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label class="control-label" for="adresseN">Numéro</label>
+										<input id="adresseN" type="text" class="contactInput form-control" name="adresseN">
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label class="control-label" for="adresseBte">Bte</label>
+										<input id="adresseBte" type="text" class="contactInput form-control" name="adresseBte">
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label class="control-label" for="adresseCP">Code Postal </label>
+										<input id="adresseCP" type="text" class="contactInput form-control" name="adresseCP">
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label class="control-label" for="localite">Localité </label>
+										<input id="localite" type="text" class="contactInput form-control" name="localite">
+									</div>
+								</div>
+
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label class="control-label" for="PaysDomicile">Pays domicile</label>
+										<select id="PaysDomicile" class="form-control" name="PaysDomicile">
+											<option value="Afghanistan">Afghanistan</option>
+											<option value="Albanie">Albanie</option>
+											<option value="Antarctique">Antarctique</option>
+											<option value="Algérie">Algérie</option>
+											<option value="Samoa Américaines">Samoa Américaines</option>
+											<option value="Andorre">Andorre</option>
+											<option value="Angola">Angola</option>
+											<option value="Antigua-et-Barbuda">Antigua-et-Barbuda</option>
+											<option value="Azerbaïdjan">Azerbaïdjan</option>
+											<option value="Argentine">Argentine</option>
+											<option value="Australie">Australie</option>
+											<option value="Autriche">Autriche</option>
+											<option value="Bahamas">Bahamas</option>
+											<option value="Bahreïn">Bahreïn</option>
+											<option value="Bangladesh">Bangladesh</option>
+											<option value="Arménie">Arménie</option>
+											<option value="Barbade">Barbade</option>
+											<option value="Belgique" selected="selected">Belgique</option>
+											<option value="Bermudes">Bermudes</option>
+											<option value="Bhoutan">Bhoutan</option>
+											<option value="Bolivie">Bolivie</option>
+											<option value="Bosnie-Herzégovine">Bosnie-Herzégovine</option>
+											<option value="Botswana">Botswana</option>
+											<option value="Île Bouvet">Île Bouvet</option>
+											<option value="Brésil">Brésil</option>
+											<option value="Belize">Belize</option>
+											<option value="Territoire Britannique de l&#039;Océan Indien">Territoire Britannique de l&#039;Océan Indien</option>
+											<option value="Îles Salomon">Îles Salomon</option>
+											<option value="Îles Vierges Britanniques">Îles Vierges Britanniques</option>
+											<option value="Brunéi Darussalam">Brunéi Darussalam</option>
+											<option value="Bulgarie">Bulgarie</option>
+											<option value="Myanmar">Myanmar</option>
+											<option value="Burundi">Burundi</option>
+											<option value="Bélarus">Bélarus</option>
+											<option value="Cambodge">Cambodge</option>
+											<option value="Cameroun">Cameroun</option>
+											<option value="Canada">Canada</option>
+											<option value="Cap-vert">Cap-vert</option>
+											<option value="Îles Caïmanes">Îles Caïmanes</option>
+											<option value="République Centrafricaine">République Centrafricaine</option>
+											<option value="Sri Lanka">Sri Lanka</option>
+											<option value="Tchad">Tchad</option>
+											<option value="Chili">Chili</option>
+											<option value="Chine">Chine</option>
+											<option value="Taïwan">Taïwan</option>
+											<option value="Île Christmas">Île Christmas</option>
+											<option value="Îles Cocos (Keeling)">Îles Cocos (Keeling)</option>
+											<option value="Colombie">Colombie</option>
+											<option value="Comores">Comores</option>
+											<option value="Mayotte">Mayotte</option>
+											<option value="République du Congo">République du Congo</option>
+											<option value="République Démocratique du Congo">République Démocratique du Congo</option>
+											<option value="Îles Cook">Îles Cook</option>
+											<option value="Costa Rica">Costa Rica</option>
+											<option value="Croatie">Croatie</option>
+											<option value="Cuba">Cuba</option>
+											<option value="Chypre">Chypre</option>
+											<option value="République Tchèque">République Tchèque</option>
+											<option value="Bénin">Bénin</option>
+											<option value="Danemark">Danemark</option>
+											<option value="Dominique">Dominique</option>
+											<option value="République Dominicaine">République Dominicaine</option>
+											<option value="Équateur">Équateur</option>
+											<option value="El Salvador">El Salvador</option>
+											<option value="Guinée Équatoriale">Guinée Équatoriale</option>
+											<option value="Éthiopie">Éthiopie</option>
+											<option value="Érythrée">Érythrée</option>
+											<option value="Estonie">Estonie</option>
+											<option value="Îles Féroé">Îles Féroé</option>
+											<option value="Îles (malvinas) Falkland">Îles (malvinas) Falkland</option>
+											<option value="Géorgie du Sud et les Îles Sandwich du Sud">Géorgie du Sud et les Îles Sandwich du Sud</option>
+											<option value="Fidji">Fidji</option>
+											<option value="Finlande">Finlande</option>
+											<option value="Îles Åland">Îles Åland</option>
+											<option value="France">France</option>
+											<option value="Guyane Française">Guyane Française</option>
+											<option value="Polynésie Française">Polynésie Française</option>
+											<option value="Terres Australes Françaises">Terres Australes Françaises</option>
+											<option value="Djibouti">Djibouti</option>
+											<option value="Gabon">Gabon</option>
+											<option value="Géorgie">Géorgie</option>
+											<option value="Gambie">Gambie</option>
+											<option value="Territoire Palestinien Occupé">Territoire Palestinien Occupé</option>
+											<option value="Allemagne">Allemagne</option>
+											<option value="Ghana">Ghana</option>
+											<option value="Gibraltar">Gibraltar</option>
+											<option value="Kiribati">Kiribati</option>
+											<option value="Grèce">Grèce</option>
+											<option value="Groenland">Groenland</option>
+											<option value="Grenade">Grenade</option>
+											<option value="Guadeloupe">Guadeloupe</option>
+											<option value="Guam">Guam</option>
+											<option value="Guatemala">Guatemala</option>
+											<option value="Guinée">Guinée</option>
+											<option value="Guyana">Guyana</option>
+											<option value="Haïti">Haïti</option>
+											<option value="Îles Heard et Mcdonald">Îles Heard et Mcdonald</option>
+											<option value="Saint-Siège (état de la Cité du Vatican)">Saint-Siège (état de la Cité du Vatican)</option>
+											<option value="Honduras">Honduras</option>
+											<option value="Hong-Kong">Hong-Kong</option>
+											<option value="Hongrie">Hongrie</option>
+											<option value="Islande">Islande</option>
+											<option value="Inde">Inde</option>
+											<option value="Indonésie">Indonésie</option>
+											<option value="République Islamique d&#039;Iran">République Islamique d&#039;Iran</option>
+											<option value="Iraq">Iraq</option>
+											<option value="Irlande">Irlande</option>
+											<option value="Israël">Israël</option>
+											<option value="Italie">Italie</option>
+											<option value="Côte d&#039;Ivoire">Côte d&#039;Ivoire</option>
+											<option value="Jamaïque">Jamaïque</option>
+											<option value="Japon">Japon</option>
+											<option value="Kazakhstan">Kazakhstan</option>
+											<option value="Jordanie">Jordanie</option>
+											<option value="Kenya">Kenya</option>
+											<option value="République Populaire Démocratique de Corée">République Populaire Démocratique de Corée</option>
+											<option value="République de Corée">République de Corée</option>
+											<option value="Koweït">Koweït</option>
+											<option value="Kirghizistan">Kirghizistan</option>
+											<option value="République Démocratique Populaire Lao">République Démocratique Populaire Lao</option>
+											<option value="Liban">Liban</option>
+											<option value="Lesotho">Lesotho</option>
+											<option value="Lettonie">Lettonie</option>
+											<option value="Libéria">Libéria</option>
+											<option value="Jamahiriya Arabe Libyenne">Jamahiriya Arabe Libyenne</option>
+											<option value="Liechtenstein">Liechtenstein</option>
+											<option value="Lituanie">Lituanie</option>
+											<option value="Luxembourg">Luxembourg</option>
+											<option value="Macao">Macao</option>
+											<option value="Madagascar">Madagascar</option>
+											<option value="Malawi">Malawi</option>
+											<option value="Malaisie">Malaisie</option>
+											<option value="Maldives">Maldives</option>
+											<option value="Mali">Mali</option>
+											<option value="Malte">Malte</option>
+											<option value="Martinique">Martinique</option>
+											<option value="Mauritanie">Mauritanie</option>
+											<option value="Maurice">Maurice</option>
+											<option value="Mexique">Mexique</option>
+											<option value="Monaco">Monaco</option>
+											<option value="Mongolie">Mongolie</option>
+											<option value="République de Moldova">République de Moldova</option>
+											<option value="Montserrat">Montserrat</option>
+											<option value="Maroc">Maroc</option>
+											<option value="Mozambique">Mozambique</option>
+											<option value="Oman">Oman</option>
+											<option value="Namibie">Namibie</option>
+											<option value="Nauru">Nauru</option>
+											<option value="Népal">Népal</option>
+											<option value="Pays-Bas">Pays-Bas</option>
+											<option value="Antilles Néerlandaises">Antilles Néerlandaises</option>
+											<option value="Aruba">Aruba</option>
+											<option value="Nouvelle-Calédonie">Nouvelle-Calédonie</option>
+											<option value="Vanuatu">Vanuatu</option>
+											<option value="Nouvelle-Zélande">Nouvelle-Zélande</option>
+											<option value="Nicaragua">Nicaragua</option>
+											<option value="Niger">Niger</option>
+											<option value="Nigéria">Nigéria</option>
+											<option value="Niué">Niué</option>
+											<option value="Île Norfolk">Île Norfolk</option>
+											<option value="Norvège">Norvège</option>
+											<option value="Îles Mariannes du Nord">Îles Mariannes du Nord</option>
+											<option value="Îles Mineures Éloignées des États-Unis">Îles Mineures Éloignées des États-Unis</option>
+											<option value="États Fédérés de Micronésie">États Fédérés de Micronésie</option>
+											<option value="Îles Marshall">Îles Marshall</option>
+											<option value="Palaos">Palaos</option>
+											<option value="Pakistan">Pakistan</option>
+											<option value="Panama">Panama</option>
+											<option value="Papouasie-Nouvelle-Guinée">Papouasie-Nouvelle-Guinée</option>
+											<option value="Paraguay">Paraguay</option>
+											<option value="Pérou">Pérou</option>
+											<option value="Philippines">Philippines</option>
+											<option value="Pitcairn">Pitcairn</option>
+											<option value="Pologne">Pologne</option>
+											<option value="Portugal">Portugal</option>
+											<option value="Guinée-Bissau">Guinée-Bissau</option>
+											<option value="Timor-Leste">Timor-Leste</option>
+											<option value="Porto Rico">Porto Rico</option>
+											<option value="Qatar">Qatar</option>
+											<option value="Réunion">Réunion</option>
+											<option value="Roumanie">Roumanie</option>
+											<option value="Fédération de Russie">Fédération de Russie</option>
+											<option value="Rwanda">Rwanda</option>
+											<option value="Sainte-Hélène">Sainte-Hélène</option>
+											<option value="Saint-Kitts-et-Nevis">Saint-Kitts-et-Nevis</option>
+											<option value="Anguilla">Anguilla</option>
+											<option value="Sainte-Lucie">Sainte-Lucie</option>
+											<option value="Saint-Pierre-et-Miquelon">Saint-Pierre-et-Miquelon</option>
+											<option value="Saint-Vincent-et-les Grenadines">Saint-Vincent-et-les Grenadines</option>
+											<option value="Saint-Marin">Saint-Marin</option>
+											<option value="Sao Tomé-et-Principe">Sao Tomé-et-Principe</option>
+											<option value="Arabie Saoudite">Arabie Saoudite</option>
+											<option value="Sénégal">Sénégal</option>
+											<option value="Seychelles">Seychelles</option>
+											<option value="Sierra Leone">Sierra Leone</option>
+											<option value="Singapour">Singapour</option>
+											<option value="Slovaquie">Slovaquie</option>
+											<option value="Viet Nam">Viet Nam</option>
+											<option value="Slovénie">Slovénie</option>
+											<option value="Somalie">Somalie</option>
+											<option value="Afrique du Sud">Afrique du Sud</option>
+											<option value="Zimbabwe">Zimbabwe</option>
+											<option value="Espagne">Espagne</option>
+											<option value="Sahara Occidental">Sahara Occidental</option>
+											<option value="Soudan">Soudan</option>
+											<option value="Suriname">Suriname</option>
+											<option value="Svalbard etÎle Jan Mayen">Svalbard etÎle Jan Mayen</option>
+											<option value="Swaziland">Swaziland</option>
+											<option value="Suède">Suède</option>
+											<option value="Suisse">Suisse</option>
+											<option value="République Arabe Syrienne">République Arabe Syrienne</option>
+											<option value="Tadjikistan">Tadjikistan</option>
+											<option value="Thaïlande">Thaïlande</option>
+											<option value="Togo">Togo</option>
+											<option value="Tokelau">Tokelau</option>
+											<option value="Tonga">Tonga</option>
+											<option value="Trinité-et-Tobago">Trinité-et-Tobago</option>
+											<option value="Émirats Arabes Unis">Émirats Arabes Unis</option>
+											<option value="Tunisie">Tunisie</option>
+											<option value="Turquie">Turquie</option>
+											<option value="Turkménistan">Turkménistan</option>
+											<option value="Îles Turks et Caïques">Îles Turks et Caïques</option>
+											<option value="Tuvalu">Tuvalu</option>
+											<option value="Ouganda">Ouganda</option>
+											<option value="Ukraine">Ukraine</option>
+											<option value="L&#039;ex-République Yougoslave de Macédoine">L&#039;ex-République Yougoslave de Macédoine</option>
+											<option value="Égypte">Égypte</option>
+											<option value="Royaume-Uni">Royaume-Uni</option>
+											<option value="Île de Man">Île de Man</option>
+											<option value="République-Unie de Tanzanie">République-Unie de Tanzanie</option>
+											<option value="États-Unis">États-Unis</option>
+											<option value="Îles Vierges des États-Unis">Îles Vierges des États-Unis</option>
+											<option value="Burkina Faso">Burkina Faso</option>
+											<option value="Uruguay">Uruguay</option>
+											<option value="Ouzbékistan">Ouzbékistan</option>
+											<option value="Venezuela">Venezuela</option>
+											<option value="Wallis et Futuna">Wallis et Futuna</option>
+											<option value="Samoa">Samoa</option>
+											<option value="Yémen">Yémen</option>
+											<option value="Serbie-et-Monténégro">Serbie-et-Monténégro</option>
+											<option value="Zambie">Zambie</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+							<div class="row">
+
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="distance">Km domicile-travail (distance aller uniquement)</label>
+										<input id="distance" type="number" min="0" class="contactInput form-control" name="distance">
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label for="phone_number">Moyen transport</label>
+										<select id="moyenTransport" class="form-control" name="moyenTransport">
+											<option value="Néant">Néant</option>
+											<option value="Véhicule privé (chauffeur)">Véhicule privé (chauffeur)</option>
+											<option value="Covoiturage (passager)">Covoiturage (passager)</option>
+											<option value="Voiture société">Voiture société</option>
+											<option value="Train">Train</option>
+											<option value="Transp public - Bus">Transp public - Bus</option>
+											<option value="Transp public - Tram">Transp public - Tram</option>
+											<option value="Transp public - Mixte">Transp public - Mixte</option>
+											<option value="Transp collectif (par employeur)">Transp collectif (par employeur)</option>
+											<option value="Vélo">Vélo</option>
+											<option value="Moto">Moto</option>
+											<option value="Cyclomoteur">Cyclomoteur</option>
+											<option value="A pied">A pied</option>
+											<option value="Tiers payant (transp public)">Tiers payant (transp public)</option>
+
+										</select>
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element3 -->
+					<div class="row numtel" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="numTelFix">N° TEL</label>
+										<input id="numTelFix" type="tel" class="contactInput form-control" name="numTelFix">
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element4 -->
+					<div class="row numgsm" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="numTelGsm">N° GSM </label>
+										<input id="numTelGsm" type="tel" class="contactInput form-control" name="numTelGsm">
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element5 -->
+					<div class="row adressemail" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="mail">Mail</label>
+										<input id="mail" type="email" class="contactInput form-control" name="mail">
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element6 -->
+					<div class="row fincontrat" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="dateSortie">Date sortie</label>
+										<input id="dateSortie" type="date" class="contactInput form-control" name="dateSortie">
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element7 -->
+					<div class="row langues" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label for="phone_number">Langue *</label>
+										<div>
+											<input type="radio" id="Français" name="langue" value="Français" checked required/>
+											<label for="Français">Français</label>
+										</div>
+										<div>
+											<input type="radio" id="Néerlandais" name="langue" value="Néerlandais" />
+											<label for="Néerlandais">Néerlandais</label>
+										</div>
+										<div>
+											<input type="radio" id="Allemand" name="langue" value="Allemand" />
+											<label for="Allemand">Allemand</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element8 -->
+					<div class="row etatcivil" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<h4>DONNÉES FAMILIALES</h4>
+							<div class="row">
+
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<div class="form-group">
+											<label for="etatCivil">Etat civil *</label>
+											<select id="etatCivil" class="form-control" name="etatCivil" required>
+												<option value="Célibataire">Célibataire</option>
+												<option value="Marié(e)">Marié(e)</option>
+												<option value="Divorcé(e)">Divorcé(e)</option>
+												<option value="Séparé(e) corps et biens">Séparé(e) corps et biens</option>
+												<option value="Veuf/ve">Veuf/ve</option>
+												<option value="Ménage de fait">Ménage de fait</option>
+												<option value="Séparé(e) de fait">Séparé(e) de fait</option>
+												<option value="Cohabitant légal">Cohabitant légal</option>
+
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 dateEtatCivil" style="display: none;">
+									<div class="form-group">
+										<label class="control-label" for="dateEtatcivil">Date état civil</label>
+										<input id="dateEtatcivil" type="date" class="contactInput form-control" name="dateEtatcivil">
+									</div>
+								</div>
+							</div>
+							<div class="row marie" style="display: none;">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="nomTravailleur">Nom et Prénom Partenaire</label>
+										<input id="nomTravailleur" type="text" class="contactInput form-control" name="nomPartenaireTravailleur">
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="professionPartenaire">Profession Partenaire</label>
+										<select id="professionPartenaire" class="form-control" name="professionPartenaire">
+											<option value="Néant" selected="selected">Néant</option>
+											<option value="ouvrier">ouvrier</option>
+											<option value="Employé">Employé</option>
+											<option value="Employé de maison">Employé de maison</option>
+											<option value="Indépendant">Indépendant</option>
+											<option value="Fonction d'état">Fonction d'état</option>
+											<option value="Mineur">Mineur</option>
+											<option value="Marin">Marin</option>
+											<option value="Sans profession">Sans profession</option>
+											<option value="Autres">Autres</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+							<div class="row marie" style="display: none;">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label for="phone_number">Partenaire à charge</label>
+										<div>
+											<input type="radio" id="partenaireChargeoui" name="Partenaire" value="oui" />
+											<label for="partenaireChargeoui">oui</label>
+										</div>
+										<div>
+											<input type="radio" id="partenaireChargenon" name="Partenaire" value="non" />
+											<label for="partenaireChargenon">non</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 handicap" style="display: none;">
+									<div class="form-group">
+										<label for="phone_number">Partenaire handicapé</label>
+										<div>
+											<input type="radio" id="PartenairehandicapPoui" name="Partenairehandicap" value="oui" />
+											<label for="PartenairehandicapPoui">oui</label>
+										</div>
+										<div>
+											<input type="radio" id="PartenairehandicapPnon" name="Partenairehandicap" value="non" />
+											<label for="PartenairehandicapPnon">non</label>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element9 -->
+					<div class="row charge" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<h4>PERSONNES À CHARGES</h4>
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="enfantscharge">Nombre d'enfants à charge fiscalement</label>
+										<input id="enfantscharge" type="number" min="0" class="contactInput form-control" name="enfantscharge">
+									</div>
+								</div>
+
+							</div>
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="personnesCharge">Autres personnes à charge de moins de 65 ans</label>
+										<input id="personnesCharge" type="number" min="0" class="contactInput form-control" name="personnesCharge">
+									</div>
+								</div>
+
+							</div>
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="personne65">Autres personnes à charge de plus de 65 ans</label>
+										<input id="personne65" type="number" min="0" class="contactInput form-control" name="personne65">
+									</div>
+								</div>
+
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element10 -->
+					<div class="row compte" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="form-group">
+								<label class="control-label" for="CompteBancaire">Compte bancaire travailleur *</label>
+								<input id="CompteBancaire" type="text" class="contactInput form-control" name="CompteBancaire" required>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element11 -->
+					<div class="row newcontrat" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="dateDebutContrat">Date début contrat *</label>
+										<input id="dateDebutContrat" type="date" class="contactInput form-control" name="dateDebutContrat" required>
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="dateFinContrat">Date fin contrat </label>
+										<input id="dateFinContrat" type="date" class="contactInput form-control" name="dateFinContrat">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="anciennete">Reprise ancienneté employeur précédent </label>
+										<input id="anciennete" type="text" class="contactInput form-control" name="anciennete">
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="raisonFinContrat">Raison fin contrat</label>
+										<input id="raisonFinContrat" type="text" class="contactInput form-control" name="raisonFinContrat">
+									</div>
+								</div>
+
+							</div>
+							<div class="row">
+
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="departement">Département</label>
+										<input id="departement" type="text" class="contactInput form-control" name="departement">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<div class="form-group">
+											<label for="soumis">Soumis au Préc Prof</label>
+											<select id="soumis" class="form-control" name="soumis">
+												<option value="soumis" selected="selected">soumis</option>
+												<option value="non soumis">non soumis</option>
+												<option value="détaché / pas de fiche 281">détaché / pas de fiche 281</option>
+												<option value="Préc Prof base forfaitaire">Préc Prof base forfaitaire</option>
+												<option value="Chercheur Schientifique">Chercheur Schientifique</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label>Spécificité si d'application </label>
+										<div>
+											<input type="radio" id="choix1" name="application" value="Soumis à l'ONSS" />
+											<label for="choix1">Soumis à l'ONSS</label>
+										</div>
+										<div>
+											<input type="radio" id="choix2" name="application" value="Non soumis à l'ONSS" />
+											<label for="choix2">Non soumis à l'ONSS</label>
+										</div>
+										<div>
+											<input type="radio" id="choix3" name="application" value="PFI/FPI/IBO/Form Alter" />
+											<label for="choix3">PFI/FPI/IBO/Form Alter</label>
+										</div>
+										<div>
+											<input type="radio" id="choix4" name="application" value="Stage de transition (TRI)" />
+											<label for="choix4">Stage de transition (TRI)</label>
+										</div>
+										<div>
+											<input type="radio" id="choix5" name="application" value="Flexi-jour" />
+											<label for="choix5">Flexi-jour</label>
+										</div>
+										<div>
+											<input type="radio" id="choix6" name="application" value="Trav. à la maison" />
+											<label for="choix6">Trav. à la maison</label>
+										</div>
+										<div>
+											<input type="radio" id="choix7" name="application" value="Engagé après stage (FWT)" />
+											<label for="choix7">Engagé après stage (FWT)</label>
+										</div>
+										<div>
+											<input type="radio" id="choix8" name="application" value="ACS" />
+											<label for="choix8">ACS</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<div class="form-group">
+											<label for="statut">Statut *</label>
+											<select id="statut" class="form-control" name="statut" required>
+												<option value="Ouvrier" selected="selected">Ouvrier</option>
+												<option value="Employé">Employé</option>
+												<option value="Trav. à domicile">Trav. à domicile</option>
+												<option value="Stagiaire ouvrrier">Stagiaire ouvrrier</option>
+												<option value="Stagiaire employé">Stagiaire employé</option>
+												<option value="Pourboire">Pourboire</option>
+												<option value="Extra pourboire">Extra pourboire</option>
+												<option value="Apprenti">Apprenti</option>
+												<option value="Etudiant ouvrier">Etudiant ouvrier</option>
+												<option value="Etudiant employé">Etudiant employé</option>
+												<option value="Restant (gérant indépendant)">Restant (gérant indépendant)</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="commissionParitaire">Commission Paritaire</label>
+										<input id="commissionParitaire" type="text" class="contactInput form-control" name="commissionParitaire">
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element12 -->
+					<div class="row regime" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<div class="form-group">
+											<label for="catDureeTravail">Catégorie (Durée du travail) *</label>
+											<select id="catDureeTravail" class="form-control" name="catDureeTravail" required>
+												<option value="Temps plein" selected="selected">Temps plein</option>
+												<option value="Temps partiel">Temps partiel</option>
+												<option value="Saisonnier">Saisonnier</option>
+												<option value="Intermittent">Intermittent</option>
+												<option value="Travailleur occasionnel">Travailleur occasionnel</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label class="control-label" for="moyenneJS">Moy. jour/sem</label>
+										<input id="moyenneJS" type="number" min="0" max="7" class="contactInput form-control" name="moyenneJS">
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<div class="form-group">
+											<label for="regimeTrav">Régime Trav</label>
+											<select id="regimeTrav" class="form-control" name="regimeTrav">
+												<option value="5 jours par semaine" selected="selected">5 jours par semaine</option>
+												<option value="autre régime">autre régime</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label class="control-label" for="heuresSem">Heures/sem (moyenne) *</label>
+										<input id="heuresSem" type="number" min="0" max="40" class="contactInput form-control" name="heuresSem" required>
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element13 -->
+					<div class="row salaire" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label class="control-label" for="classeSalariale">Classe salariale (barème)</label>
+										<input id="classeSalariale" type="text" class="contactInput form-control" name="classeSalariale">
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label class="control-label" for="salaire">Salaire *</label>
+										<input id="salaire" type="number" min="0" class="contactInput form-control" name="salaire">
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label for="phone_number">Type Salaire *</label>
+										<div>
+											<input type="radio" id="mensuel" name="typeSalaire" value="Salaire mensuel" required/>
+											<label for="mensuel">Salaire mensuel</label>
+										</div>
+										<div>
+											<input type="radio" id="horaire" name="typeSalaire" value="Salaire horaire" />
+											<label for="horaire">Salaire horaire</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label for="phone_number">Avantage en nature (si octroi)</label>
+										<div>
+											<input type="checkbox" id="Néant" name="avantage[]" value="Néant" />
+											<label for="Néant">Néant</label>
+										</div>
+										<div>
+											<input type="checkbox" id="Prêt" name="avantage[]" value="Prêt" />
+											<label for="Prêt">Prêt</label>
+										</div>
+										<div>
+											<input type="checkbox" id="Logement" name="avantage[]" value="Logement" />
+											<label for="Logement">Logement</label>
+										</div>
+										<div>
+											<input type="checkbox" id="Chauffage" name="avantage[]" value="Chauffage" />
+											<label for="Chauffage">Chauffage</label>
+										</div>
+										<div>
+											<input type="checkbox" id="Eclairage" name="avantage[]" value="Eclairage" />
+											<label for="Eclairage">Eclairage</label>
+										</div>
+										<div>
+											<input type="checkbox" id="Nourriture" name="avantage[]" value="Nourriture" />
+											<label for="Nourriture">Nourriture</label>
+										</div>
+										<div>
+											<input type="checkbox" id="Ordinateur" name="avantage[]" value="Ordinateur" />
+											<label for="Ordinateur">Ordinateur</label>
+										</div>
+										<div>
+											<input type="checkbox" id="Ordinateur+Internet" name="avantage[]" value="Ordinateur+Internet" />
+											<label for="Ordinateur+Internet">Ordinateur+Internet</label>
+										</div>
+										<div>
+											<input type="checkbox" id="Voiture de société" name="avantage[]" value="Voiture de société" />
+											<label for="Voiture de société">Voiture de société</label>
+										</div>
+										<div>
+											<input type="checkbox" id="Divers" name="avantage[]" value="Divers" />
+											<label for="Divers">Divers</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element14 -->
+					<div class="row volon" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<div class="form-group">
+										<label>Volontariat fiscal</label>
+										<div>
+											<input type="radio" id="volontariatOui" name="volontariat" value="oui" />
+											<label for="volontariatOui">Oui</label>
+										</div>
+										<div>
+											<input type="radio" id="volontariatNon" name="volontariat" value="non" />
+											<label for="volontariatNon">Non</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 choixUn" style="display: none;">
+									<div class="form-group">
+										<label>Choix d'un</label>
+										<div>
+											<input type="radio" id="pourcentageNon" name="choix" value="Montant" />
+											<label for="pourcentageNon">Montant</label>
+										</div>
+										<div>
+											<input type="radio" id="pourcentageOui" name="choix" value="Pourcentage" />
+											<label for="pourcentageOui">Pourcentage</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 montantFiscal" style="display: none;">
+									<div class="form-group">
+										<label for="montantVolonFiscal">Montant du volontariat fiscal</label>
+										<input id="montantVolonFiscal" type="number" min="0" class="contactInput form-control" name="montantVolonFiscal">
+									</div>
+								</div>
+
+								<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 pourcentFiscal" style="display: none;">
+									<div class="form-group">
+										<label for="pourcentVolonFiscal">% du volontariat fiscal </label>
+										<input id="pourcentVolonFiscal" type="number" max="100" min="0" class="contactInput form-control" name="pourcentVolonFiscal">
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element15 -->
+					<div class="row autre" style="display: none;">
+
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+								<label>Autres éléments de rémunérations</label>
+								<div class="form-group">
+									<div>
+
+										<input type="checkbox" id="elements1" name="remunerations1[]" value="Néant" />
+										<label for="elements1">Néant</label>
+									</div>
+									<div>
+										<input type="checkbox" id="elements2" name="remunerations1[]" value="Vêtement travail (CP 124/146/302)" />
+										<label for="elements2">Vêtement travail (CP 124/146/302)</label>
+									</div>
+									<div>
+										<input type="checkbox" id="elements3" name="remunerations1[]" value="RGPT (CP 140)" />
+										<label for="elements3">RGPT (CP 140)</label>
+									</div>
+									<div>
+										<input type="checkbox" id="elements4" name="remunerations1[]" value="Prime Dim/JF" />
+										<label for="elements4">Prime Dim/JF (Horeca)</label>
+									</div>
+									<div>
+										<input type="checkbox" id="elements5" name="remunerations1[]" value="Prime nuit (Horeca)" />
+										<label for="elements5">Prime nuit (Horeca)</label>
+									</div>
+									<div>
+										<input type="checkbox" id="elements6" name="remunerations1[]" value="Déplacement dom trav" />
+										<label for="elements6">Déplacement dom trav</label>
+									</div>
+									<div>
+										<input type="checkbox" id="elements7" name="remunerations1[]" value="Frais propres employeur (FPE)" />
+										<label for="elements7">Frais propres employeur (FPE)</label>
+									</div>
+									<div>
+										<input type="checkbox" id="elements8" name="remunerations1[]" value="Avantage en nature" />
+										<label for="elements8">Avantage en nature (ATN)</label>
+									</div>
+									<div>
+										<input type="checkbox" id="elements9" name="remunerations1[]" value="Autre" />
+										<label for="elements9">Autre</label>
+									</div>
+								</div>
+								
+								<div class="FPE" style="display: none;">
+									<label for="phone_number">Type FPE</label>
+									<div class="form-group">
+										<div>
+											<input type="checkbox" id="elements21" name="remunerations2[]" value="GSM privé util prof" />
+											<label for="elements21">GSM privé util prof</label>
+										</div>
+										<div>
+											<input type="checkbox" id="elements22" name="remunerations2[]" value="Frais bureau dom - télétravail" />
+											<label for="elements22">Frais bureau dom - télétravail</label>
+										</div>
+										<div>
+											<input type="checkbox" id="elements23" name="remunerations2[]" value="Lunch itinérant" />
+											<label for="elements23">Lunch itinérant</label>
+										</div>
+										<div>
+											<input type="checkbox" id="elements24" name="remunerations2[]" value="Commodité itinérant" />
+											<label for="elements24">Commodité itinérant</label>
+										</div>
+										<div>
+											<input type="checkbox" id="elements25" name="remunerations2[]" value="Car-wash" />
+											<label for="elements25">Car-wash</label>
+										</div>
+										<div>
+											<input type="checkbox" id="elements26" name="remunerations2[]" value="Garage voiture société" />
+											<label for="elements26">Garage voiture société</label>
+										</div>
+										<div>
+											<input type="checkbox" id="elements27" name="remunerations2[]" value="Autre" />
+											<label for="elements27">Autre</label>
+										</div>
+									</div>
+								</div>
+								<div class="row GSMPrive" style="display: none;">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<div class="form-group">
+											<label class="control-label" for="montantGsm">Montant Gsm</label>
+											<input id="montantGsm" type="number" min="0" class="contactInput form-control" name="montantGsm">
+										</div>
+									</div>
+								</div>
+								<div class="row fraisbureaudom" style="display: none;">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<div class="form-group">
+											<label>Frais bureau</label>
+											<div>
+												<input type="radio" id="montantONSS" name="fraisbureau" value="Montant fft ONSS" />
+												<label for="montantONSS">Montant fft ONSS</label>
+											</div>
+											<div>
+												<input type="radio" id="pourcentageONNS" name="fraisbureau" value="% ONNS" />
+												<label for="pourcentageONNS">% ONNS</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row lunchItinerantdiv" style="display: none;">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<div class="form-group">
+											<label>Lunch itinérant</label>
+											<div>
+												<input type="radio" id="montantONSSlunchItinerant" name="lunchItinerant" value="Montant fft ONSS" />
+												<label for="montantONSSlunchItinerant">Montant fft ONSS</label>
+											</div>
+											<div>
+												<input type="radio" id="montantproporelunchItinerant" name="lunchItinerant" value="Montant propore" />
+												<label for="montantproporelunchItinerant">Montant propore</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 lunchItinerantmontantdiv" style="display: none;">
+										<div class="form-group">
+											<label class="control-label" for="lunchItinerantmontant">Lunch itinérant - montant à prendre en compte</label>
+											<input id="lunchItinerantmontant" type="number" min="0" class="contactInput form-control" name="lunchItinerantmontant">
+										</div>
+									</div>
+								</div>
+								<div class="row commoditesItinerantdiv" style="display: none;">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<div class="form-group">
+											<label>Commodités itinérant</label>
+											<div>
+												<input type="radio" id="montantONSSCommodites" name="commoditesItinerant" value="Montant fft ONSS" />
+												<label for="montantONSSCommodites">Montant fft ONSS</label>
+											</div>
+											<div>
+												<input type="radio" id="montantproporeCommodites" name="commoditesItinerant" value="Montant propore" />
+												<label for="montantproporeCommodites">Montant propore</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 commoditesItinerantmontantdiv" style="display: none;">
+										<div class="form-group">
+											<label class="control-label" for="commoditesItinerantmontant">Commodités itinérant - montant à prendre en compte</label>
+											<input id="commoditesItinerantmontant" type="number" min="0" class="contactInput form-control" name="commoditesItinerantmontant">
+										</div>
+									</div>
+								</div>
+								<div class="row carwashdiv" style="display: none;">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<div class="form-group">
+											<label>Car-wash</label>
+											<div>
+												<input type="radio" id="montantONSScarwash" name="carwash" value="Montant fft ONSS" />
+												<label for="montantONSScarwash">Montant fft ONSS</label>
+											</div>
+											<div>
+												<input type="radio" id="montantproporecarwash" name="carwash" value="Montant propore" />
+												<label for="montantproporecarwash">Montant propore</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 carwashmontantdiv" style="display: none;">
+										<div class="form-group">
+											<label class="control-label" for="carwashmontant">Car-Wash : montant à prendre en compte</label>
+											<input id="carwashmontant" type="number" min="0" class="contactInput form-control" name="carwashmontant">
+										</div>
+									</div>
+								</div>
+								<div class="row garagediv" style="display: none;">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<div class="form-group">
+											<label>Garage</label>
+											<div>
+												<input type="radio" id="montantONSSgarage" name="garage" value="Montant fft ONSS" />
+												<label for="montantONSSgarage">Montant fft ONSS</label>
+											</div>
+											<div>
+												<input type="radio" id="montantproporegarage" name="garage" value="Montant propore" />
+												<label for="montantproporegarage">Montant propore</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 garagemontantdiv" style="display: none;">
+										<div class="form-group">
+											<label class="control-label" for="garagemontant">Garage - montant à prendre en compte</label>
+											<input id="garagemontant" type="number" min="0" class="contactInput form-control" name="garagemontant">
+										</div>
+									</div>
+								</div>
+								<div class="row AutreFPE" style="display: none;">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<div class="form-group">
+											<label class="control-label" for="autreFrais">Type autre Frais propres à l'employeur</label>
+											<input id="autreFrais " type="" min="0" class="contactInput form-control" name="autreFrais">
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+											<div class="form-group">
+												<label class="control-label" for="autreFrais">Montant autre frais propres employeur</label>
+												<input id="autreFrais " type="number" min="0" class="contactInput form-control" name="MontantautreFrais">
+											</div>
+									</div>
+								</div>
+								<div class="ATN" style="display: none;">
+									<label>Type - ATN </label>
+									<div class="form-group">
+										<div>
+											<input type="checkbox" id="elements31" name="remunerations3[]" value="GSM" />
+											<label for="elements31">GSM</label>
+										</div>
+										<div>
+
+											<input type="checkbox" id="elements32" name="remunerations3[]" value="PC (15€/mois)" />
+											<label for="elements32">PC (15€/mois)</label>
+										</div>
+										<div>
+											<input type="checkbox" id="elements33" name="remunerations3[]" value="Internet (5€/mois)" />
+											<label for="elements33">Internet (5€/mois)</label>
+										</div>
+										<div>
+											<input type="checkbox" id="elements34" name="remunerations3[]" value="Voiture" />
+											<label for="elements34">Voiture</label>
+										</div>
+										<div>
+											<input type="checkbox" id="elements35" name="remunerations3[]" value="Logement" />
+											<label for="elements35">Logement</label>
+										</div>
+										<div>
+											<input type="checkbox" id="elements36" name="remunerations3[]" value="Autre(s)" />
+											<label for="elements36">Autre(s)</label>
+										</div>
+									</div>
+								</div>
+								<div class="row gsmdiv" style="display: none;">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<div class="form-group">
+											<label>ATN - GSM</label>
+											<div>
+												<input type="radio" id="montantFftGSM" name="gsm" value="Montant fft ONSS" />
+												<label for="montantFftGSM">Montant Fft 12,50€</label>
+											</div>
+											<div>
+												<input type="radio" id="montantAutreGSM" name="gsm" value="Autre montant" />
+												<label for="montantAutreGSM">Autre montant</label>
+											</div>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 gsmmontantdiv" style="display: none;">
+										<div class="form-group">
+											<label class="control-label" for="gsmmontant">ATN - GSM Montant</label>
+											<input id="gsmmontant" type="number" min="0" class="contactInput form-control" name="gsmmontant">
+										</div>
+									</div>
+								</div>
+								<div class="row logementdiv" style="display: none;">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<div class="form-group">
+											<label class="control-label" for="logement">ATN - Logement</label>
+											<input id="logement" type="number" min="0" class="contactInput form-control" name="logement">
+										</div>
+									</div>
+								</div>
+								<div class="row AutreATNdiv" style="display: none;">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<div class="form-group">
+											<label class="control-label" for="autreATN">ATN - Autre</label>
+											<input id="autreATN" type="text" class="contactInput form-control" name="autreATN">
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<div class="form-group">
+											<label class="control-label" for="autreMontantATN">ATN -Autre Montant</label>
+											<input id="autreMontantATN" type="number" min="0" class="contactInput form-control" name="autreMontantATN">
+										</div>
+									</div>
+								</div>
+								<div class="row autreAvantage" style="display: none;">
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+											<div class="form-group">
+												<label class="control-label" for="typeAvantage">Autre type d'avantage</label>
+												<input id="typeAvantage" type="text" class="contactInput form-control" name="typeAvantage">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+											<div class="form-group">
+												<label class="control-label" for="montantAvantage">Montant - Autre type d'avantage</label>
+												<input id="montantAvantage" type="number" min="0" class="contactInput form-control" name="montantAvantage">
+											</div>
+										</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element16 -->
+					<div class="row repas" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<label class="control-label" for="SocieteEmetrice">Société émetrice </label>
+									<select id="SocieteEmetrice" class="form-control" name="SocieteEmetrice">
+										<option value="Monizze">Monizze</option>
+										<option value="Edenred">Edenred</option>
+										<option value="Sodexo">Sodexo</option>
+									</select>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<div class="form-group">
+										<label class="control-label" for="valeurChequeRepas">Valeur faciale - Chèques repas</label>
+										<input id="valeurChequeRepas" type="number" min="0" class="contactInput form-control" name="valeurChequeRepas">
+									</div>
+								</div>
+							</div>
+							<hr/>
+						</div>
+					</div>
+					<!-- element17 -->
+					<div class="row infos" style="display: none;">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="form-group">
+								<label for="remarque">Remarques particulières à communiquer </label>
+								<textarea class="contactInput form-control" name="remarque" id="remarque"></textarea>
+							</div>
+						</div>
+					</div>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				<div class="form-group">
+					<input type="submit" value="Soumettre">
+				</div>
+			</div>
+
+		</div>
+
+		</form>
+	</div>
+	</div>
+	<!--container-->
+
+	<script src="src/main.js"></script>
+</body>
+
+</html>
